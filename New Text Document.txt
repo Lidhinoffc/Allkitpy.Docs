@@ -1,0 +1,63 @@
+┌─────────────────────────────────────────────────────────────────────┐
+│ icon                                                                            _
+                                                                                    _
+                                            Home Docs Modules Examples Roadmap GitHub                                          _      │
+├─────────────────────────────────────────────────────────────────────┤
+│                     logo
+─────────────────────────────────────────────────────────────────────┤
+ 
+                                                                  │
+│              One Library. Every Python Utility.                      │
+│                                                                     │
+│   icon             Modern all-in-one Python utility library.                      │
+│                                                                     │
+│         [ Get Started ] [ Documentation ] [ GitHub ] [ PyPI ]             │
+│                                                                     │
+│                  Python Code Preview                                 │
+│                                                                     │
+├─────────────────────────────────────────────────────────────────────┤
+│                    Statistics                                       │
+│ 250+ Functions | 30+ Modules | 100+ Examples | Open Source          │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Why Allkitpy?                                   │
+│ Fast | Modern | Cross Platform | Type Hints | Clean API             │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Popular Modules                                │
+│ Text | Math | File | PDF | Image | CSV | JSON | AI | Security       │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Installation                                    │
+│ pip install allkitpy                                                │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Quick Example                                   │
+│ Python code + Output                                                │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Documentation                                   │
+│ Getting Started | Installation | Modules | Examples | API           │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Roadmap                                         │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Community                                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                     Footer                                          │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+
+
+
+add hint like
+
+if we type allkitpy.
+
+it show hint like text ,ai,image..........
+
+if we type allkitpy.text.
+
+it show hint like upper,lower,title......
+
+
+
+we finished text both py,html now we move to math modulefully then it html then next module ............. remember the concept.
+
+
+

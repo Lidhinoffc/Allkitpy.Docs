@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Module | AllkitPy</title>
+
+    <link rel="stylesheet" href="modules.css">
+</head>
+
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+
+    <div class="logo">
+        🧩 <span>AllkitPy</span>
+        <small>Documentation</small>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Search (coming soon)" disabled>
+    </div>
+
+</header>
+
+<!-- ================= LAYOUT ================= -->
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+
+    <h2>Modules</h2>
+
+    <nav>
+        <a href="examples.html">📄 Introduction</a>
+        <a class="active" href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+
+<!-- ================= CONTENT ================= -->
+<main class="content">
+
+<h1>📝 Text Module</h1>
+
+<p>
+The <b>Text module</b> provides utilities for formatting,
+cleaning, and analyzing text in a simple and consistent API.
+</p>
+
+<hr>
+
+<h2>🚀 Quick Example</h2>
+
+<div class="example-grid">
+
+<!-- CODE -->
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.uppercase("hello world"))
+</code></pre>
+</div>
+
+<!-- OUTPUT -->
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+HELLO WORLD
+</code></pre>
+</div>
+
+</div>
+
+<hr>
+
+<h2>✨ Formatting Functions</h2>
+
+<!-- ================= FUNCTION 1 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">uppercase()</div>
+
+<p class="function-description">
+Converts all characters in a string to uppercase.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(
+    allkitpy.text.uppercase("hello world")
+)
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+HELLO WORLD
+</code></pre>
+</div>
+
+</div>
+
+<div class="note-box">
+<b>📘 Note:</b> This function is case-sensitive and works on any string input.
+</div>
+
+</div>
+
+<!-- ================= PART 2 COMING ================= -->
+
+<!-- ================= FUNCTION 2 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">upper()</div>
+
+<p class="function-description">
+Alias of <b>uppercase()</b>. Converts text to uppercase.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.upper("hello world"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+HELLO WORLD
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 3 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">lowercase()</div>
+
+<p class="function-description">
+Converts all characters in a string to lowercase.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.lowercase("HELLO WORLD"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+hello world
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 4 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">lower()</div>
+
+<p class="function-description">
+Alias of <b>lowercase()</b>. Converts text to lowercase.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.lower("HELLO WORLD"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+hello world
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 5 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">title()</div>
+
+<p class="function-description">
+Converts text to title case (first letter of each word capitalized).
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.title("hello world from allkitpy"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+Hello World From Allkitpy
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 6 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">capitalize()</div>
+
+<p class="function-description">
+Capitalizes only the first character of the string.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.capitalize("hello world"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+Hello world
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 7 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">remove_spaces()</div>
+
+<p class="function-description">
+Removes all spaces from the text.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.remove_spaces("hello world from allkitpy"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+helloworldfromallkitpy
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 8 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">remove_extra_spaces()</div>
+
+<p class="function-description">
+Removes extra spaces and keeps only single spacing between words.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.remove_extra_spaces("hello     world   from   allkitpy"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+hello world from allkitpy
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 9 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">remove_numbers()</div>
+
+<p class="function-description">
+Removes all numeric digits from the text.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.remove_numbers("a1b2c3d4"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+abcd
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 10 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">word_count()</div>
+
+<p class="function-description">
+Counts the number of words in a string.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.word_count("hello world from allkitpy"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+4
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 11 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">char_count()</div>
+
+<p class="function-description">
+Counts total characters in the string including spaces.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.char_count("hello"))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+5
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FUNCTION 12 ================= -->
+
+<div class="function-card">
+
+<div class="function-title">sentence_count()</div>
+
+<p class="function-description">
+Counts number of sentences separated by dots.
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+<h4>💻 Code</h4>
+<pre><code>
+import allkitpy
+
+print(allkitpy.text.sentence_count("hello world. this is allkitpy."))
+</code></pre>
+</div>
+
+<div class="output-box">
+<h4>✅ Output</h4>
+<pre><code>
+2
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<hr>
+
+<div class="footer">
+
+🧩 AllkitPy Text Module Documentation<br>
+Version 0.1.0
+
+<br><br>
+
+© 2026 AllkitPy. All rights reserved.
+
+</div>
+
+</main>
+
+</div>
+
+</body>
+</html>
