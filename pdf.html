@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PDF Module | AllkitPy Documentation</title>
+
+    <link rel="stylesheet" href="modules.css">
+        <link rel="stylesheet" href="image.css">
+
+
+</head>
+
+<body>
+
+<!-- ====================================================== -->
+<!-- Header -->
+<!-- ====================================================== -->
+
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!-- ====================================================== -->
+<!-- Main Layout -->
+<!-- ====================================================== -->
+
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- Sidebar -->
+<!-- ====================================================== -->
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+
+        
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a class="active" href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+
+<!-- ====================================================== -->
+<!-- Content -->
+<!-- ====================================================== -->
+
+<main class="content">
+
+<h1>📄 PDF Module</h1>
+
+<p>
+
+The PDF module provides everything needed to create,
+edit, merge, split, secure, compress and analyze PDF
+documents using simple Python functions.
+
+</p>
+
+<div class="info-box">
+
+<b>Features</b>
+
+<ul>
+
+<li>Create PDF documents</li>
+
+<li>Merge and split PDFs</li>
+
+<li>Extract text and images</li>
+
+<li>Insert or delete pages</li>
+
+<li>Rotate pages</li>
+
+<li>Add watermarks</li>
+
+<li>Encrypt and decrypt PDFs</li>
+
+<li>Compress PDF files</li>
+
+<li>Read metadata and page information</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<h2>Quick Example</h2>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.create(
+    "hello.pdf",
+    "Hello from AllkitPy"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>hello.pdf created</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<h2>Functions</h2>
+
+<div class="function-nav">
+
+<a href="#create">create()</a>
+
+<a href="#merge">merge()</a>
+
+<a href="#split">split()</a>
+
+<a href="#extract_text">extract_text()</a>
+
+<a href="#extract_images">extract_images()</a>
+
+<a href="#metadata">metadata()</a>
+
+<a href="#page_count">page_count()</a>
+
+<a href="#page_size">page_size()</a>
+
+<a href="#rotate">rotate()</a>
+
+<a href="#delete_pages">delete_pages()</a>
+
+<a href="#insert_pages">insert_pages()</a>
+
+<a href="#watermark">watermark()</a>
+
+<a href="#encrypt">encrypt()</a>
+
+<a href="#decrypt">decrypt()</a>
+
+<a href="#compress">compress()</a>
+
+</div>
+
+<hr class="divider">
+<!-- ====================================================== -->
+<!-- create() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="create">
+
+<h2>create()</h2>
+
+<p>
+
+Create a new PDF document containing the specified text.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.create(
+    "hello.pdf",
+    "Hello from AllkitPy"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>hello.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- merge() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="merge">
+
+<h2>merge()</h2>
+
+<p>
+
+Merge multiple PDF files into a single PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.merge(
+    [
+        "chapter1.pdf",
+        "chapter2.pdf",
+        "chapter3.pdf"
+    ],
+    "book.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>book.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- split() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="split">
+
+<h2>split()</h2>
+
+<p>
+
+Split a PDF document into individual PDF files.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.split(
+    "book.pdf",
+    "pages"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>pages/
+ ├── page_1.pdf
+ ├── page_2.pdf
+ ├── page_3.pdf
+ ...
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+<!-- ====================================================== -->
+<!-- extract_text() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="extract_text">
+
+<h2>extract_text()</h2>
+
+<p>
+
+Extract all text from a PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+text = allkitpy.pdf.extract_text(
+    "book.pdf"
+)
+
+print(text)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>Hello World
+
+Chapter 1
+
+This is the content
+inside the PDF...
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- extract_images() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="extract_images">
+
+<h2>extract_images()</h2>
+
+<p>
+
+Extract every image from a PDF document into a folder.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.extract_images(
+    "book.pdf",
+    "images"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>🖼️ Output</h4>
+
+<pre><code>images/
+ ├── image_1.png
+ ├── image_2.jpg
+ ├── image_3.png
+ ...
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- metadata() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="metadata">
+
+<h2>metadata()</h2>
+
+<p>
+
+Retrieve metadata stored inside a PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+info = allkitpy.pdf.metadata(
+    "book.pdf"
+)
+
+print(info)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>{
+ 'title': 'Python Guide',
+ 'author': 'John',
+ 'creator': 'Word',
+ 'producer': 'Microsoft'
+}
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+<!-- ====================================================== -->
+<!-- page_count() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="page_count">
+
+<h2>page_count()</h2>
+
+<p>
+
+Return the total number of pages in a PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+count = allkitpy.pdf.page_count(
+    "book.pdf"
+)
+
+print(count)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>125</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- page_size() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="page_size">
+
+<h2>page_size()</h2>
+
+<p>
+
+Return the width and height of a page.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+size = allkitpy.pdf.page_size(
+    "book.pdf"
+)
+
+print(size)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>(595.0, 842.0)</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- rotate() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="rotate">
+
+<h2>rotate()</h2>
+
+<p>
+
+Rotate every page in a PDF by 90°, 180°, or 270°.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.rotate(
+    "book.pdf",
+    90,
+    "rotated.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>rotated.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- delete_pages() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="delete_pages">
+
+<h2>delete_pages()</h2>
+
+<p>
+
+Delete one or more pages from a PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.delete_pages(
+    "book.pdf",
+    [0, 2],
+    "updated.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>updated.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+<!-- ====================================================== -->
+<!-- insert_pages() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="insert_pages">
+
+<h2>insert_pages()</h2>
+
+<p>
+
+Insert pages from another PDF into an existing PDF.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.insert_pages(
+    "book.pdf",
+    "appendix.pdf",
+    5,
+    "updated.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>updated.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- watermark() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="watermark">
+
+<h2>watermark()</h2>
+
+<p>
+
+Add a text watermark to every page of a PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.watermark(
+    "report.pdf",
+    "CONFIDENTIAL",
+    "watermarked.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📄 Output</h4>
+
+<pre><code>watermarked.pdf created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- encrypt() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="encrypt">
+
+<h2>encrypt()</h2>
+
+<p>
+
+Protect a PDF document using AES-256 password encryption.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.encrypt(
+    "report.pdf",
+    "mypassword",
+    "secure.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>🔒 Output</h4>
+
+<pre><code>secure.pdf created
+Password Protected
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+<!-- ====================================================== -->
+<!-- decrypt() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="decrypt">
+
+<h2>decrypt()</h2>
+
+<p>
+
+Remove password protection from an encrypted PDF document.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.decrypt(
+    "secure.pdf",
+    "mypassword",
+    "unlocked.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>🔓 Output</h4>
+
+<pre><code>unlocked.pdf created
+Password Removed
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- compress() -->
+<!-- ====================================================== -->
+
+<div class="function-card" id="compress">
+
+<h2>compress()</h2>
+
+<p>
+
+Optimize and compress a PDF document to reduce file size.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.pdf.compress(
+    "large.pdf",
+    "compressed.pdf"
+)
+</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📦 Output</h4>
+
+<pre><code>compressed.pdf created
+Smaller file size
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!-- ====================================================== -->
+<!-- Footer -->
+<!-- ====================================================== -->
+
+<footer class="footer">
+
+<p>
+
+<strong>📄 PDF Module</strong>
+
+</p>
+
+<p>
+
+Part of the <strong>AllkitPy Documentation</strong>
+
+</p>
+
+<p>
+
+Version 0.2.0
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Project
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

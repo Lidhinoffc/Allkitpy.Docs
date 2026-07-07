@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Module | AllkitPy</title>
+    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="image.css">
+
+</head>
+
+<body>
+
+    <!-- ================= TOP BAR ================= -->
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+    <!-- ================= LAYOUT ================= -->
+    <div class="container">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+            <h2>&nbsp;📚 Modules</h2>
+
+            <nav>
+                <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+                <a href="text.html">📝 Text</a>
+                <a href="math.html">➗ Math</a>
+                <a href="image.html">🖼 Image</a>
+                <a href="pdf.html">📕 PDF</a>
+                <a class="active" href="audio.html">🎵 Audio</a>
+                <a href="video.html">🎬 Video</a>
+                <a href="web.html">🌐 Web</a>
+                <a href="data.html">📊 Data</a>
+                <a href="file.html">📁 File</a>
+                <a href="system.html">💻 System</a>
+                <a href="ai.html">🤖 AI</a>
+            </nav>
+        </aside>
+
+        <!-- ================= CONTENT ================= -->
+        <main class="content">
+
+            <h1>🎵 Audio Module</h1>
+            <p>
+                The Audio module provides tools to process, edit, transform,
+                and analyze audio files easily using <b>AllkitPy</b>.
+            </p>
+
+            <!-- ================= FUNCTION NAVIGATION ================= -->
+            <div class="function-nav">
+                <a href="#convert">convert()</a>
+                <a href="#merge">merge()</a>
+                <a href="#split">split()</a>
+                <a href="#trim">trim()</a>
+                <a href="#volume">volume</a>
+                <a href="#effects">effects</a>
+                <a href="#edit">edit</a>
+                <a href="#info">info</a>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= QUICK EXAMPLE ================= -->
+            <h2>🚀 Quick Example</h2>
+            <div class="example-grid">
+                <div class="code-box">
+                    <h4>💻 Code</h4>
+                    <pre><code>import allkitpy
+
+allkitpy.audio.convert("song.mp3", "song.wav")</code></pre>
+                </div>
+                <div class="output-box">
+                    <h4>📤 Output</h4>
+                    <pre><code>Converted successfully</code></pre>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= CONVERT ================= -->
+            <h2 id="convert">🔄 convert()</h2>
+            <p>Convert audio files between formats (mp3, wav, ogg, etc).</p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.convert(
+    "song.mp3",
+    "song.wav"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Converted successfully</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= MERGE ================= -->
+            <h2 id="merge">🔗 merge()</h2>
+            <p>Merge multiple audio files into one.</p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.merge(
+    ["a.mp3", "b.mp3"],
+    "out.mp3"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Merged successfully</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= SPLIT ================= -->
+            <h2 id="split">✂ split()</h2>
+            <p>Extract a portion of an audio file.</p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.split(
+    "song.mp3",
+    10000,
+    30000,
+    "clip.mp3"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Split saved</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= TRIM ================= -->
+            <h2 id="trim">✂ trim()</h2>
+            <p>Trim audio between start and end time.</p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.trim(
+    "song.mp3",
+    5000,
+    20000,
+    "trim.mp3"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Trimmed successfully</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= VOLUME ================= -->
+            <h2 id="volume">🔊 Volume Control</h2>
+
+            <div class="function-card">
+                <h3>increase() / decrease()</h3>
+                <p>Increase or decrease audio volume.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.increase("song.mp3", 5, "loud.mp3")
+
+allkitpy.audio.decrease("song.mp3", 5, "quiet.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Volume adjusted</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= EFFECTS ================= -->
+            <h2 id="effects">🎧 Effects</h2>
+
+            <div class="function-card">
+                <h3>fade_in() / fade_out()</h3>
+                <p>Add fade-in and fade-out effects.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.fade_in("song.mp3", 3000, "in.mp3")
+
+allkitpy.audio.fade_out("song.mp3", 3000, "out.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Effect applied</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-card">
+                <h3>normalize()</h3>
+                <p>Normalize audio volume level.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.normalize("song.mp3", "norm.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Normalized</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= EDIT ================= -->
+            <h2 id="edit">⚡ Edit</h2>
+
+            <div class="function-card">
+                <h3>reverse()</h3>
+                <p>Reverse audio playback.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.reverse("song.mp3", "rev.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Reversed</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-card">
+                <h3>speed()</h3>
+                <p>Change playback speed (0.5x, 2x, etc).</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.speed("song.mp3", 2.0, "fast.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Speed changed</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= INFO ================= -->
+            <h2 id="info">📊 Info</h2>
+
+            <div class="function-card">
+                <h3>metadata()</h3>
+                <p>Get audio file information.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.metadata("song.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>{
+  duration: 120.5,
+  channels: 2,
+  sample_rate: 44100
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="function-card">
+                <h3>duration() / channels() / sample_rate()</h3>
+                <p>Get basic audio properties.</p>
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>allkitpy.audio.duration("song.mp3")
+allkitpy.audio.channels("song.mp3")
+allkitpy.audio.sample_rate("song.mp3")</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>120.5
+2
+44100</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ================= SUMMARY TABLE ================= -->
+            <h2>📋 Summary</h2>
+            <table class="doc-table">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>convert()</code></td>
+                        <td>Convert audio between formats</td>
+                    </tr>
+                    <tr>
+                        <td><code>merge()</code></td>
+                        <td>Merge multiple audio files</td>
+                    </tr>
+                    <tr>
+                        <td><code>split()</code></td>
+                        <td>Extract a portion of audio</td>
+                    </tr>
+                    <tr>
+                        <td><code>trim()</code></td>
+                        <td>Trim audio between times</td>
+                    </tr>
+                    <tr>
+                        <td><code>increase()/decrease()</code></td>
+                        <td>Adjust volume level</td>
+                    </tr>
+                    <tr>
+                        <td><code>fade_in()/fade_out()</code></td>
+                        <td>Apply fade effects</td>
+                    </tr>
+                    <tr>
+                        <td><code>normalize()</code></td>
+                        <td>Normalize volume level</td>
+                    </tr>
+                    <tr>
+                        <td><code>reverse()</code></td>
+                        <td>Reverse audio playback</td>
+                    </tr>
+                    <tr>
+                        <td><code>speed()</code></td>
+                        <td>Change playback speed</td>
+                    </tr>
+                    <tr>
+                        <td><code>metadata()</code></td>
+                        <td>Get audio metadata</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ================= RELATED MODULES ================= -->
+            <h2>🔗 Related Modules</h2>
+            <div class="module-grid">
+                <div class="module-card">
+                    <h3>🎬 Video Module</h3>
+                    <p>Video processing and editing tools.</p>
+                </div>
+                <div class="module-card">
+                    <h3>📊 Data Module</h3>
+                    <p>Data processing and analysis utilities.</p>
+                </div>
+                <div class="module-card">
+                    <h3>📁 File Module</h3>
+                    <p>File operations and management tools.</p>
+                </div>
+            </div>
+
+            <!-- ================= FOOTER ================= -->
+            <hr class="divider">
+
+            <footer class="footer">
+                <p><strong>🧩 AllkitPy Documentation</strong></p>
+                <p>Audio Module • Version 0.1.0</p>
+                <p>© 2026 AllkitPy Project. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

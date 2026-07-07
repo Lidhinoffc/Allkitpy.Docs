@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>File Module | AllkitPy</title>
+
+<link rel="stylesheet" href="modules.css">
+<link rel="stylesheet" href="image.css">
+
+
+</head>
+
+<body>
+
+<!--==========================================================
+TOP BAR
+===========================================================-->
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!-- ================= LAYOUT ================= -->
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a class="active" href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+<main class="content">
+
+<h1>📁 File Module</h1>
+
+<p>
+
+The <b>File</b> module provides simple utilities for
+copying, moving, deleting, renaming files and retrieving
+basic file information.
+
+</p>
+
+<div class="info-box">
+
+<b>Supported Features</b>
+
+<ul>
+
+<li>Copy Files</li>
+
+<li>Move Files</li>
+
+<li>Delete Files</li>
+
+<li>Rename Files</li>
+
+<li>Check File Existence</li>
+
+<li>Get File Size</li>
+
+<li>List Directory Contents</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+<p>
+
+Copy a file to another location.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.file.copy(
+    "report.pdf",
+    "backup/report.pdf"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>backup/
+└── report.pdf</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FUNCTION NAVIGATION
+===========================================================-->
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+<div class="function-nav">
+
+<a href="#copy">copy()</a>
+
+<a href="#move">move()</a>
+
+<a href="#delete">delete()</a>
+
+<a href="#rename">rename()</a>
+
+<a href="#exists">exists()</a>
+
+<a href="#size">size()</a>
+
+<a href="#list_dir">list_dir()</a>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 2 STARTS HERE
+(copy, move)
+===========================================================-->
+<!--==========================================================
+COPY
+===========================================================-->
+
+<h2 class="section-title" id="copy">
+
+📄 copy()
+
+</h2>
+
+<p>
+
+Copy a file from one location to another.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.file.copy(
+
+    "report.pdf",
+
+    "backup/report.pdf"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>backup/
+
+└── report.pdf</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MOVE
+===========================================================-->
+
+<h2 class="section-title" id="move">
+
+📂 move()
+
+</h2>
+
+<p>
+
+Move a file from one folder to another.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.file.move(
+
+    "report.pdf",
+
+    "archive/report.pdf"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>archive/
+
+└── report.pdf</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 3 STARTS HERE
+(delete, rename)
+===========================================================-->
+<!--==========================================================
+DELETE
+===========================================================-->
+
+<h2 class="section-title" id="delete">
+
+🗑️ delete()
+
+</h2>
+
+<p>
+
+Delete a file from the file system.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.file.delete(
+
+    "old_report.pdf"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>old_report.pdf deleted</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+RENAME
+===========================================================-->
+
+<h2 class="section-title" id="rename">
+
+✏️ rename()
+
+</h2>
+
+<p>
+
+Rename a file or change its location by providing a new filename or path.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.file.rename(
+
+    "draft.txt",
+
+    "final.txt"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>final.txt</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 4 STARTS HERE
+(exists, size)
+===========================================================-->
+<!--==========================================================
+EXISTS
+===========================================================-->
+
+<h2 class="section-title" id="exists">
+
+✅ exists()
+
+</h2>
+
+<p>
+
+Check whether a file or directory exists.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+result = allkitpy.file.exists(
+
+    "report.pdf"
+
+)
+
+print(result)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>True</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+SIZE
+===========================================================-->
+
+<h2 class="section-title" id="size">
+
+📏 size()
+
+</h2>
+
+<p>
+
+Return the size of a file in bytes.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+bytes_size = allkitpy.file.size(
+
+    "report.pdf"
+
+)
+
+print(bytes_size)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>24576</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 5 STARTS HERE
+(list_dir, footer)
+===========================================================-->
+<!--==========================================================
+LIST DIRECTORY
+===========================================================-->
+
+<h2 class="section-title" id="list_dir">
+
+📂 list_dir()
+
+</h2>
+
+<p>
+
+Return a list of files and folders inside a directory.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+items = allkitpy.file.list_dir(
+
+    "Documents"
+
+)
+
+print(items)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>[
+    "report.pdf",
+    "notes.txt",
+    "images",
+    "backup"
+]</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+<footer class="footer">
+
+<p>
+
+<strong>AllkitPy File Module Documentation</strong>
+
+</p>
+
+<p>
+
+Manage files with a simple and consistent API. Copy,
+move, rename, delete files, inspect file information,
+and browse directory contents using easy-to-use
+functions.
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

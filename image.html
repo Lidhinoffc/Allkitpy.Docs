@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllkitPy Documentation - Image Module</title>
+    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="image.css">
+    
+</head>
+<body>
+
+    <!-- ==========================================================
+    HEADER
+    ========================================================== -->
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+    <!-- ==========================================================
+    MAIN CONTAINER
+    ========================================================== -->
+    <div class="container">
+
+        <!-- ==========================================================
+        SIDEBAR
+        ========================================================== -->
+        <aside class="sidebar">
+            <h2>&nbsp;📚 Modules</h2>
+
+            <nav>
+                <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+                <!-- <a href="#" class="active">🖼 Image</a> -->
+                <a href="examples.html">📄 Introduction</a>
+                <a href="text.html">📝 Text</a>
+                <a href="math.html">➗ Math</a>
+                <a class="active" href="image.html">🖼 Image</a>
+                <a href="pdf.html">📕 PDF</a>
+                <a href="audio.html">🎵 Audio</a>
+                <a href="video.html">🎬 Video</a>
+                <a href="web.html">🌐 Web</a>
+                <a href="data.html">📊 Data</a>
+                <a href="file.html">📁 File</a>
+                <a href="system.html">💻 System</a>
+                <a href="ai.html">🤖 AI</a>
+            </nav>
+        </aside>
+
+        <!-- ==========================================================
+        CONTENT
+        ========================================================== -->
+        <main class="content">
+
+            <!-- ==========================================================
+            IMAGE MODULE HEADER
+            ========================================================== -->
+            <h1>🖼 Image Module</h1>
+            <p>
+                The Image module provides simple and powerful image processing
+                utilities including resizing, cropping, rotating, flipping,
+                blurring, converting, thumbnail creation, and compression.
+            </p>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            RESIZE FUNCTION
+            ========================================================== -->
+            <h2>📏 resize()</h2>
+            <p>
+                Resize an image to the specified width and height.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.resize(
+    "cat.jpg",
+    (800, 600),
+    "resize.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image resized successfully.
+Saved as resize.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            CROP FUNCTION
+            ========================================================== -->
+            <h2>✂️ crop()</h2>
+            <p>
+                Crop a rectangular region from an image.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.crop(
+    "cat.jpg",
+    (100, 100, 500, 400),
+    "crop.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image cropped successfully.
+Saved as crop.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            ROTATE FUNCTION
+            ========================================================== -->
+            <h2>🔄 rotate()</h2>
+            <p>
+                Rotate an image by a specified angle. By default, the canvas expands
+                to fit the entire rotated image without cropping.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.rotate(
+    "cat.jpg",
+    90,
+    "rotate.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image rotated successfully.
+Saved as rotate.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <b>💡 Tip</b>
+                <p>Positive angles rotate the image counter-clockwise. Common values:</p>
+                <ul>
+                    <li>90°</li>
+                    <li>180°</li>
+                    <li>270°</li>
+                    <li>45°</li>
+                </ul>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            FLIP FUNCTION
+            ========================================================== -->
+            <h2>↔️ flip()</h2>
+            <p>
+                Flip an image horizontally or vertically.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.flip(
+    "cat.jpg",
+    "horizontal",
+    "flip.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image flipped successfully.
+Saved as flip.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <b>📌 Available Modes</b>
+                <ul>
+                    <li><b>horizontal</b> → Left ↔ Right</li>
+                    <li><b>vertical</b> → Top ↕ Bottom</li>
+                </ul>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            BLUR FUNCTION
+            ========================================================== -->
+            <h2>🌫️ blur()</h2>
+            <p>
+                Apply a Gaussian blur effect to an image. Increasing the blur radius
+                creates a stronger blur effect.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.blur(
+    "cat.jpg",
+    5,
+    "blur.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image blurred successfully.
+Saved as blur.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <b>💡 Blur Radius</b>
+                <ul>
+                    <li>1 → Light blur</li>
+                    <li>3 → Medium blur</li>
+                    <li>5 → Strong blur</li>
+                    <li>10+ → Very strong blur</li>
+                </ul>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            CONVERT FUNCTION
+            ========================================================== -->
+            <h2>🎨 convert()</h2>
+            <p>
+                Convert an image to another color mode.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.convert(
+    "cat.png",
+    "grayscale",
+    "gray.png"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image converted successfully.
+Saved as gray.png</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <b>📌 Supported Modes</b>
+                <ul>
+                    <li><b>grayscale</b> → Black &amp; White Image</li>
+                    <li><b>RGB</b> → Standard RGB Color Image</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <b>💡 Tip</b>
+                <p>
+                    Use <b>grayscale</b> when preparing images for OCR,
+                    document processing, or reducing file size.
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            THUMBNAIL FUNCTION
+            ========================================================== -->
+            <h2>🖼️ thumbnail()</h2>
+            <p>
+                Create a thumbnail image while preserving the original aspect ratio.
+                The image is automatically resized to fit within the specified
+                dimensions without distortion.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.thumbnail(
+    "cat.jpg",
+    (200, 200),
+    "thumb.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Thumbnail created successfully.
+Saved as thumb.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <b>💡 Tip</b>
+                <p>
+                    Thumbnails are commonly used for galleries,
+                    websites, previews, and profile pictures.
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            COMPRESS FUNCTION
+            ========================================================== -->
+            <h2>🗜️ compress()</h2>
+            <p>
+                Compress an image by reducing its quality to produce a smaller file
+                size while keeping the image usable.
+            </p>
+
+            <div class="function-card">
+                <div class="example-grid">
+                    <div class="code-box">
+                        <h4>💻 Code</h4>
+                        <pre><code>import allkitpy
+
+allkitpy.image.compress(
+    "photo.jpg",
+    75,
+    "compressed.jpg"
+)</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <h4>📤 Output</h4>
+                        <pre><code>Image compressed successfully.
+Saved as compressed.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <b>📊 Quality Guide</b>
+                <table class="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Quality</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>100</td>
+                            <td>Best quality, largest file size</td>
+                        </tr>
+                        <tr>
+                            <td>90</td>
+                            <td>High quality</td>
+                        </tr>
+                        <tr>
+                            <td>75</td>
+                            <td>Balanced quality and size (Recommended)</td>
+                        </tr>
+                        <tr>
+                            <td>50</td>
+                            <td>Smaller file size</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>Very small file size, noticeable quality loss</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <b>⚠️ Note</b>
+                <p>
+                    Compression is most effective for JPEG images.
+                    PNG images use a different compression method and may not show the
+                    same reduction in file size.
+                </p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            SUMMARY SECTION
+            ========================================================== -->
+            <h2>📋 Summary</h2>
+            <p>
+                The Image module provides simple yet powerful image processing
+                utilities for everyday development tasks. Whether you need to
+                resize, crop, rotate, convert, blur, create thumbnails, or compress
+                images, AllkitPy offers an easy-to-use interface with minimal code.
+            </p>
+
+            <table class="doc-table">
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>resize()</code></td>
+                        <td>Resize an image to a specified width and height.</td>
+                    </tr>
+                    <tr>
+                        <td><code>crop()</code></td>
+                        <td>Crop a selected region from an image.</td>
+                    </tr>
+                    <tr>
+                        <td><code>rotate()</code></td>
+                        <td>Rotate an image by any angle.</td>
+                    </tr>
+                    <tr>
+                        <td><code>flip()</code></td>
+                        <td>Flip an image horizontally or vertically.</td>
+                    </tr>
+                    <tr>
+                        <td><code>blur()</code></td>
+                        <td>Apply a Gaussian blur effect.</td>
+                    </tr>
+                    <tr>
+                        <td><code>convert()</code></td>
+                        <td>Convert an image to another color mode.</td>
+                    </tr>
+                    <tr>
+                        <td><code>thumbnail()</code></td>
+                        <td>Create a thumbnail while preserving aspect ratio.</td>
+                    </tr>
+                    <tr>
+                        <td><code>compress()</code></td>
+                        <td>Reduce image file size using quality compression.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ==========================================================
+            QUICK EXAMPLE
+            ========================================================== -->
+            <div class="tip-box">
+                <h3>🚀 Quick Example</h3>
+                <pre><code>import allkitpy
+
+allkitpy.image.resize(
+    "photo.jpg",
+    (800, 600),
+    "output.jpg"
+)</code></pre>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ==========================================================
+            FUNCTION NAVIGATION
+            ========================================================== -->
+            <div class="function-nav">
+                <a href="#resize">resize()</a>
+                <a href="#crop">crop()</a>
+                <a href="#rotate">rotate()</a>
+                <a href="#flip">flip()</a>
+                <a href="#blur">blur()</a>
+                <a href="#convert">convert()</a>
+                <a href="#thumbnail">thumbnail()</a>
+                <a href="#compress">compress()</a>
+            </div>
+
+            <!-- ==========================================================
+            MODULE GRID
+            ========================================================== -->
+            <h2>🔗 Related Modules</h2>
+            <div class="module-grid">
+                <div class="module-card">
+                    <h3>📊 Data Module</h3>
+                    <p>Data processing and analysis utilities.</p>
+                </div>
+                <div class="module-card">
+                    <h3>📁 File Module</h3>
+                    <p>File operations and management tools.</p>
+                </div>
+                <div class="module-card">
+                    <h3>🔢 Math Module</h3>
+                    <p>Mathematical functions and calculations.</p>
+                </div>
+            </div>
+
+            <!-- ==========================================================
+            FOOTER
+            ========================================================== -->
+            <footer class="footer">
+                <p><strong>🧩 AllkitPy Documentation</strong></p>
+                <p>Image Module • Version 0.1.0</p>
+                <p>© 2026 AllkitPy Project. All Rights Reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

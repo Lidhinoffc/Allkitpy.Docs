@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Module | AllkitPy</title>
+
+    <link rel="stylesheet" href="modules.css">
+        <link rel="stylesheet" href="image.css">
+
+</head>
+
+<body>
+
+<!--==========================================================
+TOP BAR
+===========================================================-->
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!--==========================================================
+LAYOUT
+===========================================================-->
+
+<div class="container">
+
+<!--==========================================================
+SIDEBAR
+===========================================================-->
+
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a class="active" href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+<main class="content">
+
+<h1>🎬 Video Module</h1>
+
+<p>
+
+The <b>Video</b> module provides simple and powerful
+utilities for video editing, conversion, compression,
+audio extraction, watermarking, frame extraction,
+GIF creation, and metadata inspection.
+
+</p>
+
+<div class="info-box">
+
+<b>Supported Features</b>
+
+<ul>
+
+<li>Video Conversion</li>
+
+<li>Merge & Split</li>
+
+<li>Editing Tools</li>
+
+<li>Audio Processing</li>
+
+<li>Frame Extraction</li>
+
+<li>Compression</li>
+
+<li>Watermarking</li>
+
+<li>Effects</li>
+
+<li>Video Information</li>
+
+<li>GIF Export</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+<p>
+
+Convert an MP4 video into AVI.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.convert(
+    "movie.mp4",
+    "movie.avi"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>movie.avi</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FUNCTION NAVIGATION
+===========================================================-->
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+<div class="function-nav">
+
+<a href="#convert">convert()</a>
+
+<a href="#merge">merge()</a>
+
+<a href="#split">split()</a>
+
+<a href="#trim">trim()</a>
+
+<a href="#resize">resize()</a>
+
+<a href="#rotate">rotate()</a>
+
+<a href="#crop">crop()</a>
+
+<a href="#extract_audio">extract_audio()</a>
+
+<a href="#extract_frames">extract_frames()</a>
+
+<a href="#add_audio">add_audio()</a>
+
+<a href="#compress">compress()</a>
+
+<a href="#watermark">watermark()</a>
+
+<a href="#speed">speed()</a>
+
+<a href="#reverse">reverse()</a>
+
+<a href="#mute">mute()</a>
+
+<a href="#duration">duration()</a>
+
+<a href="#resolution">resolution()</a>
+
+<a href="#fps">fps()</a>
+
+<a href="#metadata">metadata()</a>
+
+<a href="#gif">gif()</a>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 2 STARTS HERE
+(convert, merge, split)
+===========================================================-->
+<!--==========================================================
+CONVERT
+===========================================================-->
+
+<h2 class="section-title" id="convert">
+
+🎞️ convert()
+
+</h2>
+
+<p>
+
+Convert a video from one format to another.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.convert(
+    "movie.mp4",
+    "movie.avi"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>movie.avi</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MERGE
+===========================================================-->
+
+<h2 class="section-title" id="merge">
+
+📦 merge()
+
+</h2>
+
+<p>
+
+Merge multiple videos into a single video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.merge(
+
+    [
+        "intro.mp4",
+        "part1.mp4",
+        "part2.mp4"
+    ],
+
+    "complete.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>complete.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+SPLIT
+===========================================================-->
+
+<h2 class="section-title" id="split">
+
+✂️ split()
+
+</h2>
+
+<p>
+
+Split a video into equal-length clips.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.split(
+
+    "movie.mp4",
+
+    60,
+
+    "part"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>part_1.mp4
+part_2.mp4
+part_3.mp4
+...</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 3 STARTS HERE
+(trim, resize, rotate, crop)
+===========================================================-->
+<!--==========================================================
+TRIM
+===========================================================-->
+
+<h2 class="section-title" id="trim">
+
+✂️ trim()
+
+</h2>
+
+<p>
+
+Extract a specific portion of a video using start and end times.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.trim(
+
+    "movie.mp4",
+
+    10,
+
+    45,
+
+    "clip.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>clip.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+RESIZE
+===========================================================-->
+
+<h2 class="section-title" id="resize">
+
+📐 resize()
+
+</h2>
+
+<p>
+
+Resize a video to a custom resolution.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.resize(
+
+    "movie.mp4",
+
+    1280,
+
+    720,
+
+    "hd.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>hd.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+ROTATE
+===========================================================-->
+
+<h2 class="section-title" id="rotate">
+
+🔄 rotate()
+
+</h2>
+
+<p>
+
+Rotate a video by a specified angle.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.rotate(
+
+    "movie.mp4",
+
+    90,
+
+    "rotated.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>rotated.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+CROP
+===========================================================-->
+
+<h2 class="section-title" id="crop">
+
+🖼️ crop()
+
+</h2>
+
+<p>
+
+Crop a rectangular region from a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.crop(
+
+    "movie.mp4",
+
+    100,
+
+    50,
+
+    900,
+
+    650,
+
+    "cropped.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>cropped.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 4 STARTS HERE
+(extract_audio, extract_frames, add_audio)
+===========================================================-->
+<!--==========================================================
+EXTRACT AUDIO
+===========================================================-->
+
+<h2 class="section-title" id="extract_audio">
+
+🎵 extract_audio()
+
+</h2>
+
+<p>
+
+Extract the audio track from a video file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.extract_audio(
+
+    "movie.mp4",
+
+    "movie.mp3"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>movie.mp3</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+EXTRACT FRAMES
+===========================================================-->
+
+<h2 class="section-title" id="extract_frames">
+
+🖼️ extract_frames()
+
+</h2>
+
+<p>
+
+Extract video frames as PNG images.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.extract_frames(
+
+    "movie.mp4",
+
+    "frames",
+
+    fps=2
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>frames/
+
+frame_00001.png
+frame_00002.png
+frame_00003.png
+...</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+ADD AUDIO
+===========================================================-->
+
+<h2 class="section-title" id="add_audio">
+
+🎧 add_audio()
+
+</h2>
+
+<p>
+
+Replace the audio track of a video with another audio file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.add_audio(
+
+    "video.mp4",
+
+    "music.mp3",
+
+    "final.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>final.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 5 STARTS HERE
+(compress, watermark, speed,
+reverse, mute)
+===========================================================-->
+<!--==========================================================
+COMPRESS
+===========================================================-->
+
+<h2 class="section-title" id="compress">
+
+🗜️ compress()
+
+</h2>
+
+<p>
+
+Reduce the file size of a video by lowering its bitrate.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.compress(
+
+    "movie.mp4",
+
+    "compressed.mp4",
+
+    bitrate="1000k"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>compressed.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+WATERMARK
+===========================================================-->
+
+<h2 class="section-title" id="watermark">
+
+🏷️ watermark()
+
+</h2>
+
+<p>
+
+Add an image watermark to the bottom-right corner of a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.watermark(
+
+    "movie.mp4",
+
+    "logo.png",
+
+    "watermarked.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>watermarked.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+SPEED
+===========================================================-->
+
+<h2 class="section-title" id="speed">
+
+⚡ speed()
+
+</h2>
+
+<p>
+
+Increase or decrease the playback speed of a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.speed(
+
+    "movie.mp4",
+
+    2.0,
+
+    "fast.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>fast.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+REVERSE
+===========================================================-->
+
+<h2 class="section-title" id="reverse">
+
+⏪ reverse()
+
+</h2>
+
+<p>
+
+Play a video from the last frame to the first frame.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.reverse(
+
+    "movie.mp4",
+
+    "reverse.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>reverse.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MUTE
+===========================================================-->
+
+<h2 class="section-title" id="mute">
+
+🔇 mute()
+
+</h2>
+
+<p>
+
+Remove the audio track from a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.mute(
+
+    "movie.mp4",
+
+    "silent.mp4"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>silent.mp4</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 6 STARTS HERE
+(duration, resolution, fps,
+metadata, gif, footer)
+===========================================================-->
+<!--==========================================================
+DURATION
+===========================================================-->
+
+<h2 class="section-title" id="duration">
+
+⏱️ duration()
+
+</h2>
+
+<p>
+
+Return the total duration of a video in seconds.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+seconds = allkitpy.video.duration(
+    "movie.mp4"
+)
+
+print(seconds)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>125.84</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+RESOLUTION
+===========================================================-->
+
+<h2 class="section-title" id="resolution">
+
+📺 resolution()
+
+</h2>
+
+<p>
+
+Return the width and height of a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+size = allkitpy.video.resolution(
+    "movie.mp4"
+)
+
+print(size)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>(1920, 1080)</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FPS
+===========================================================-->
+
+<h2 class="section-title" id="fps">
+
+🎞️ fps()
+
+</h2>
+
+<p>
+
+Return the frame rate (frames per second) of a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+rate = allkitpy.video.fps(
+    "movie.mp4"
+)
+
+print(rate)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>30.0</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+METADATA
+===========================================================-->
+
+<h2 class="section-title" id="metadata">
+
+📋 metadata()
+
+</h2>
+
+<p>
+
+Return basic metadata about a video.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+info = allkitpy.video.metadata(
+    "movie.mp4"
+)
+
+print(info)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>{
+ 'duration': 125.84,
+ 'fps': 30.0,
+ 'resolution': (1920,1080)
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+GIF
+===========================================================-->
+
+<h2 class="section-title" id="gif">
+
+🎬 gif()
+
+</h2>
+
+<p>
+
+Convert a video into an animated GIF.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.video.gif(
+
+    "movie.mp4",
+
+    "movie.gif"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>movie.gif</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+<footer class="footer">
+
+<p>
+
+<strong>AllkitPy Video Module Documentation</strong>
+
+</p>
+
+<p>
+
+Convert, edit, compress, merge, split, extract audio,
+capture frames, add watermarks, create GIFs, inspect
+video metadata, and perform common video processing
+tasks with a simple Python API.
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

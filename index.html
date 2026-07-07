@@ -33,10 +33,13 @@
         <nav class="nav">
 
             <a class="nav-item" href="#home">Home</a>
-            <a class="nav-item" href="examples.html">Documents</a>
+            <a class="nav-item" href="examples.html">Learn Allkitpy</a>
+
+
+            <a class="nav-item" href="#docs">Documents</a>
             <a class="nav-item" href="#modules">Modules</a>
             <a class="nav-item" href="examples.html">Example</a>
-            <a class="nav-item" href="#roadmap">Roadmap</a>
+            <!-- <a class="nav-item" href="#roadmap">Roadmap</a> -->
 
         </nav>
 
@@ -107,6 +110,9 @@ class="hero">
 
             </a>
 
+            <a href="examples.html "class="btn">Learn Allkitpy</a>
+
+
             <a href="#docs"
                class="btn">
 
@@ -134,19 +140,15 @@ class="hero">
 
 <pre><code>import Allkitpy
 
-
-print(allkitpy.text.uppercase("add a , b"))
-
-print(allkitpy.math.add(10, 5))
+print(allkitpy.text.uppercase("howdy"))
+<!-- print(allkitpy.math.add(10, 5)) -->
 
 
 --------------------------------------------
 <b><u>Output</u></b>
 --------------------------------------------
-
 ADD A , B
-
-15
+<!-- 15 -->
 
 
 </code></pre>
@@ -290,11 +292,29 @@ id="modules">
 
         <div class="module-grid">
 
-            <div class="card">Text</div>
+            <!-- <a class="nav-item" href="examples.html">Documents</a> -->
+            <!-- <div class="card" href="examples.html"> Text</div> -->
+           <!-- <a href="text.html" style="text-decoration: none; color: inherit;"><div class="card">Text</div>
+</a> -->
+           <div class="card" onclick="window.location.href='text.html';">Text</div>
+           <div class="card" onclick="window.location.href='math.html';">Math</div>
 
-            <div class="card">Math</div>
+            <!-- <div class="card">Math</div> -->
+           <div class="card" onclick="window.location.href='image.html';">Image</div>
+           <div class="card" onclick="window.location.href='video.html';">Video</div>
+           <div class="card" onclick="window.location.href='audio.html';">Audio</div>
+           <div class="card" onclick="window.location.href='pdf.html';">Pdf</div>
+           <div class="card" onclick="window.location.href='web.html';">Web</div>
+           <div class="card" onclick="window.location.href='data.html';">Data</div>
+           <div class="card" onclick="window.location.href='file.html';">File</div>
+           <div class="card" onclick="window.location.href='system.html';">System</div>
+           <div class="card" onclick="window.location.href='ai.html';">Ai</div>
 
-            <div class="card">File</div>
+
+
+
+
+            <!-- <div class="card">File</div>
 
             <div class="card">PDF</div>
 
@@ -306,7 +326,7 @@ id="modules">
 
             <div class="card">AI</div>
 
-            <div class="card">Security</div>
+            <div class="card">Security</div> -->
 
         </div>
 
@@ -380,6 +400,9 @@ id="docs">
         <div class="doc-links">
 
             <a href="#">Getting Started</a>
+
+            <a href="examples.html">Learn Allkitpy</a>
+
 
             <a href="#">Installation</a>
 

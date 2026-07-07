@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>System Module | AllkitPy</title>
+
+<link rel="stylesheet" href="modules.css">
+<link rel="stylesheet" href="image.css">
+
+
+</head>
+
+<body>
+
+<!--==========================================================
+TOP BAR
+===========================================================-->
+
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!-- ================= LAYOUT ================= -->
+<div class="container">
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a class="active"  href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+<main class="content">
+
+<h1>💻 System Module</h1>
+
+<p>
+
+The <b>System</b> module provides a collection of utilities
+for interacting with the operating system. It includes
+commands, directories, files, environment variables,
+paths, processes and operating system information.
+
+</p>
+
+<div class="info-box">
+
+<b>Supported Features</b>
+
+<ul>
+
+<li>Run Shell Commands</li>
+
+<li>Create & Remove Directories</li>
+
+<li>Create & Remove Files</li>
+
+<li>Environment Variables</li>
+
+<li>Operating System Information</li>
+
+<li>Path Utilities</li>
+
+<li>Process Information</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+<p>
+
+Execute a shell command.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+result = allkitpy.system.command.run(
+    "python --version"
+)
+
+print(result["stdout"])</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Python 3.13.5</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FUNCTION NAVIGATION
+===========================================================-->
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+<div class="function-nav">
+
+<a href="#command_run">command.run()</a>
+
+<a href="#directory_create">directory.create()</a>
+
+<a href="#directory_remove">directory.remove()</a>
+
+<a href="#directory_list">directory.list()</a>
+
+<a href="#env_get">env.get()</a>
+
+<a href="#env_set">env.set()</a>
+
+<a href="#env_all">env.all()</a>
+
+<a href="#file_create">file.create()</a>
+
+<a href="#file_remove">file.remove()</a>
+
+<a href="#os_system">os.system()</a>
+
+<a href="#os_release">os.release()</a>
+
+<a href="#os_version">os.version()</a>
+
+<a href="#os_machine">os.machine()</a>
+
+<a href="#os_processor">os.processor()</a>
+
+<a href="#os_python_version">os.python_version()</a>
+
+<a href="#path_exists">path.exists()</a>
+
+<a href="#path_absolute">path.absolute()</a>
+
+<a href="#path_parent">path.parent()</a>
+
+<a href="#path_filename">path.filename()</a>
+
+<a href="#path_extension">path.extension()</a>
+
+<a href="#process_pid">process.pid()</a>
+
+<a href="#process_cwd">process.cwd()</a>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+COMMAND.RUN
+===========================================================-->
+
+<h2 class="section-title" id="command_run">
+
+⚙️ command.run()
+
+</h2>
+
+<p>
+
+Execute a shell command and return its output.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+result = allkitpy.system.command.run(
+    "dir"
+)
+
+print(result["stdout"])</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Directory listing...</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+DIRECTORY.CREATE
+===========================================================-->
+
+<h2 class="section-title"
+id="directory_create">
+
+📁 directory.create()
+
+</h2>
+
+<p>
+
+Create a new directory. Parent folders are created
+automatically if needed.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.system.directory.create(
+    "Projects"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Projects/</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+DIRECTORY.REMOVE
+===========================================================-->
+
+<h2 class="section-title"
+id="directory_remove">
+
+🗑️ directory.remove()
+
+</h2>
+
+<p>
+
+Delete a directory and all of its contents.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.system.directory.remove(
+    "Projects"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Projects removed</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 2 STARTS HERE
+
+directory.list()
+
+env.get()
+
+env.set()
+
+env.all()
+
+file.create()
+
+file.remove()
+
+os.system()
+
+os.release()
+
+===========================================================-->
+<!--==========================================================
+DIRECTORY.LIST
+===========================================================-->
+
+<h2 class="section-title"
+id="directory_list">
+
+📂 directory.list()
+
+</h2>
+
+<p>
+
+Return the names of files and folders inside a directory.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+items = allkitpy.system.directory.list(
+    "Documents"
+)
+
+print(items)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>[
+    "notes.txt",
+    "report.pdf",
+    "images",
+    "backup"
+]</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+ENV.GET
+===========================================================-->
+
+<h2 class="section-title"
+id="env_get">
+
+🌱 env.get()
+
+</h2>
+
+<p>
+
+Retrieve the value of an environment variable.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+username = allkitpy.system.env.get(
+    "USERNAME"
+)
+
+print(username)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>John</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+ENV.SET
+===========================================================-->
+
+<h2 class="section-title"
+id="env_set">
+
+⚙️ env.set()
+
+</h2>
+
+<p>
+
+Create or update an environment variable for the current
+Python process.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.system.env.set(
+    "APP_MODE",
+    "Development"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Environment variable updated</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+ENV.ALL
+===========================================================-->
+
+<h2 class="section-title"
+id="env_all">
+
+📋 env.all()
+
+</h2>
+
+<p>
+
+Return all available environment variables as a dictionary.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+variables = allkitpy.system.env.all()
+
+print(variables)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>{
+    "PATH": "...",
+    "USERNAME": "John",
+    "TEMP": "C:\\Temp",
+    ...
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FILE.CREATE
+===========================================================-->
+
+<h2 class="section-title"
+id="file_create">
+
+📄 file.create()
+
+</h2>
+
+<p>
+
+Create an empty file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.system.file.create(
+    "notes.txt"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>notes.txt created</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FILE.REMOVE
+===========================================================-->
+
+<h2 class="section-title"
+id="file_remove">
+
+🗑️ file.remove()
+
+</h2>
+
+<p>
+
+Delete a file if it exists.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.system.file.remove(
+    "notes.txt"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>notes.txt removed</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+OS.SYSTEM
+===========================================================-->
+
+<h2 class="section-title"
+id="os_system">
+
+💻 os.system()
+
+</h2>
+
+<p>
+
+Return the name of the current operating system.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+print(
+    allkitpy.system.os.system()
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Windows</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+OS.RELEASE
+===========================================================-->
+
+<h2 class="section-title"
+id="os_release">
+
+🖥️ os.release()
+
+</h2>
+
+<p>
+
+Return the operating system release.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+print(
+    allkitpy.system.os.release()
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>11</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 3 STARTS HERE
+
+os.version()
+
+os.machine()
+
+os.processor()
+
+os.python_version()
+
+path.exists()
+
+path.absolute()
+
+path.parent()
+
+===========================================================-->
+<!--==========================================================
+OS.VERSION
+===========================================================-->
+
+<h2 class="section-title"
+id="os_version">
+
+🧩 os.version()
+
+</h2>
+
+<p>
+
+Return the detailed version of the current operating system.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+version = allkitpy.system.os.version()
+
+print(version)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>10.0.26100</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+OS.MACHINE
+===========================================================-->
+
+<h2 class="section-title"
+id="os_machine">
+
+🖥️ os.machine()
+
+</h2>
+
+<p>
+
+Return the machine architecture of the current computer.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+machine = allkitpy.system.os.machine()
+
+print(machine)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>AMD64</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+OS.PROCESSOR
+===========================================================-->
+
+<h2 class="section-title"
+id="os_processor">
+
+⚡ os.processor()
+
+</h2>
+
+<p>
+
+Return information about the processor being used.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+cpu = allkitpy.system.os.processor()
+
+print(cpu)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Intel64 Family 6 Model 165</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+OS.PYTHON_VERSION
+===========================================================-->
+
+<h2 class="section-title"
+id="os_python_version">
+
+🐍 os.python_version()
+
+</h2>
+
+<p>
+
+Return the version of Python currently running your
+program.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+print(
+    allkitpy.system.os.python_version()
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>3.13.5</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PATH.EXISTS
+===========================================================-->
+
+<h2 class="section-title"
+id="path_exists">
+
+📂 path.exists()
+
+</h2>
+
+<p>
+
+Check whether a file or directory exists.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+exists = allkitpy.system.path.exists(
+    "report.pdf"
+)
+
+print(exists)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>True</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PATH.ABSOLUTE
+===========================================================-->
+
+<h2 class="section-title"
+id="path_absolute">
+
+📍 path.absolute()
+
+</h2>
+
+<p>
+
+Return the absolute path of a file or directory.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+path = allkitpy.system.path.absolute(
+    "report.pdf"
+)
+
+print(path)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>C:\Users\User\Documents\report.pdf</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PATH.PARENT
+===========================================================-->
+
+<h2 class="section-title"
+id="path_parent">
+
+📁 path.parent()
+
+</h2>
+
+<p>
+
+Return the parent directory of a file or folder.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+parent = allkitpy.system.path.parent(
+    "Documents/report.pdf"
+)
+
+print(parent)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>Documents</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 4 STARTS HERE
+
+path.filename()
+
+path.extension()
+
+process.pid()
+
+process.cwd()
+
+Footer
+
+===========================================================-->
+<!--==========================================================
+PATH.FILENAME
+===========================================================-->
+
+<h2 class="section-title"
+id="path_filename">
+
+📄 path.filename()
+
+</h2>
+
+<p>
+
+Return the filename from a file path.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+name = allkitpy.system.path.filename(
+    "Documents/report.pdf"
+)
+
+print(name)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>report.pdf</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PATH.EXTENSION
+===========================================================-->
+
+<h2 class="section-title"
+id="path_extension">
+
+🏷️ path.extension()
+
+</h2>
+
+<p>
+
+Return the extension of a file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+ext = allkitpy.system.path.extension(
+    "report.pdf"
+)
+
+print(ext)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>.pdf</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PROCESS.PID
+===========================================================-->
+
+<h2 class="section-title"
+id="process_pid">
+
+🆔 process.pid()
+
+</h2>
+
+<p>
+
+Return the Process ID (PID) of the current Python process.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+pid = allkitpy.system.process.pid()
+
+print(pid)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>15428</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PROCESS.CWD
+===========================================================-->
+
+<h2 class="section-title"
+id="process_cwd">
+
+📂 process.cwd()
+
+</h2>
+
+<p>
+
+Return the current working directory of the running
+Python process.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>💻 Code</h4>
+
+<pre><code>import allkitpy
+
+cwd = allkitpy.system.process.cwd()
+
+print(cwd)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>📤 Output</h4>
+
+<pre><code>C:\Users\User\Projects\AllkitPy</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MODULE SUMMARY
+===========================================================-->
+
+<h2 class="section-title">
+
+📘 Module Summary
+
+</h2>
+
+<p>
+
+The <strong>System</strong> module provides convenient access
+to common operating system features through a clean,
+consistent API. It helps you work with files,
+directories, paths, environment variables, processes,
+shell commands, and operating system information without
+needing to remember multiple standard library modules.
+
+</p>
+
+<div class="info-box">
+
+<b>Categories Included</b>
+
+<ul>
+
+<li>⚙️ Command Execution</li>
+
+<li>📁 Directory Operations</li>
+
+<li>🌱 Environment Variables</li>
+
+<li>📄 File Operations</li>
+
+<li>💻 Operating System Information</li>
+
+<li>📂 Path Utilities</li>
+
+<li>🆔 Process Information</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+<footer class="footer">
+
+<p>
+
+<strong>AllkitPy System Module Documentation</strong>
+
+</p>
+
+<p>
+
+Run commands, inspect your operating system, manage files
+and directories, work with paths, read environment
+variables, and retrieve process information using a simple
+and consistent interface.
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

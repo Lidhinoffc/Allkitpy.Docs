@@ -1,0 +1,39 @@
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    text-decoration:none;
+
+}
+
+.brand img{
+
+    width:58px;
+    height:58px;
+
+    border-radius:14px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,0.18);
+
+    transition:.3s;
+
+}
+
+.brand img:hover{
+
+    transform:rotate(-5deg) scale(1.1);
+
+}
+
+.brand span{
+
+    font-size:22px;
+    font-weight:900;
+
+    background:linear-gradient(135deg,#4F46E5,#06B6D4,#22C55E);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
