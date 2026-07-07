@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Data Module | AllkitPy</title>
+
+<link
+rel="stylesheet"
+href="modules.css">
+<link
+rel="stylesheet"
+href="image.css">
+
+</head>
+
+<body>
+
+<!--==========================================================
+HEADER
+===========================================================-->
+
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!--==========================================================
+LAYOUT
+===========================================================-->
+
+<div class="container">
+
+<!--==========================================================
+SIDEBAR
+===========================================================-->
+
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a  class="active" href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+<main class="content">
+
+<h1>
+
+📊 Data Module
+
+</h1>
+
+<p>
+
+The <strong>Data</strong> module provides convenient tools
+for reading, writing, and managing structured data.
+It supports CSV, Excel, JSON, XML, and YAML files,
+along with useful file information utilities.
+
+</p>
+
+<div class="info-box">
+
+<b>
+
+Features
+
+</b>
+
+<ul>
+
+<li>📄 CSV Read & Write</li>
+
+<li>📗 Excel Read & Write</li>
+
+<li>📦 JSON Read & Write</li>
+
+<li>🧩 XML Read & Write</li>
+
+<li>📝 YAML Read & Write</li>
+
+<li>📏 File Size</li>
+
+<li>✅ File Exists</li>
+
+<li>🏷️ File Extension</li>
+
+<li>✔️ Validate File</li>
+
+<li>📄 Filename</li>
+
+<li>✂️ Filename Stem</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+<p>
+
+Read a CSV file into a DataFrame.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+df = allkitpy.data.csv.read(
+    "employees.csv"
+)
+
+print(df.head())</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+   Name   Age
+0 Alice   24
+1 Bob     31
+</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FUNCTION LIST
+===========================================================-->
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+<div class="function-nav">
+
+<a href="#csv_read">
+
+csv.read()
+
+</a>
+
+<a href="#csv_write">
+
+csv.write()
+
+</a>
+
+<a href="#excel_read">
+
+excel.read()
+
+</a>
+
+<a href="#excel_write">
+
+excel.write()
+
+</a>
+
+<a href="#json_read">
+
+json.read()
+
+</a>
+
+<a href="#json_write">
+
+json.write()
+
+</a>
+
+<a href="#xml_read">
+
+xml.read()
+
+</a>
+
+<a href="#xml_write">
+
+xml.write()
+
+</a>
+
+<a href="#yaml_read">
+
+yaml.read()
+
+</a>
+
+<a href="#yaml_write">
+
+yaml.write()
+
+</a>
+
+<a href="#size">
+
+size()
+
+</a>
+
+<a href="#exists">
+
+exists()
+
+</a>
+
+<a href="#extension">
+
+extension()
+
+</a>
+
+<a href="#validate_file">
+
+validate_file()
+
+</a>
+
+<a href="#filename">
+
+filename()
+
+</a>
+
+<a href="#stem">
+
+stem()
+
+</a>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+CSV.READ
+===========================================================-->
+
+<h2
+class="section-title"
+id="csv_read">
+
+📄 csv.read()
+
+</h2>
+
+<p>
+
+Read a CSV file into a pandas DataFrame.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+df = allkitpy.data.csv.read(
+    "employees.csv"
+)
+
+print(df)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+   Name   Age
+0 Alice   24
+1 Bob     31
+2 John    27
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+CSV.WRITE
+===========================================================-->
+
+<h2
+class="section-title"
+id="csv_write">
+
+💾 csv.write()
+
+</h2>
+
+<p>
+
+Save a pandas DataFrame as a CSV file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import pandas as pd
+import allkitpy
+
+df = pd.DataFrame({
+
+    "Name":[
+        "Alice",
+        "Bob"
+    ],
+
+    "Age":[
+        24,
+        31
+    ]
+
+})
+
+allkitpy.data.csv.write(
+    df,
+    "employees.csv"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+employees.csv
+saved successfully
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 2
+
+excel.read()
+
+excel.write()
+
+json.read()
+
+json.write()
+
+===========================================================-->
+<!--==========================================================
+EXCEL.READ
+===========================================================-->
+
+<h2
+class="section-title"
+id="excel_read">
+
+📗 excel.read()
+
+</h2>
+
+<p>
+
+Read an Excel worksheet into a pandas DataFrame.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+df = allkitpy.data.excel.read(
+    "employees.xlsx"
+)
+
+print(df)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+   Name   Age
+0 Alice   24
+1 Bob     31
+2 John    27
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+EXCEL.WRITE
+===========================================================-->
+
+<h2
+class="section-title"
+id="excel_write">
+
+💾 excel.write()
+
+</h2>
+
+<p>
+
+Save a pandas DataFrame as an Excel workbook.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import pandas as pd
+import allkitpy
+
+df = pd.DataFrame({
+
+    "Name":[
+        "Alice",
+        "Bob"
+    ],
+
+    "Age":[
+        24,
+        31
+    ]
+
+})
+
+allkitpy.data.excel.write(
+    df,
+    "employees.xlsx"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+employees.xlsx
+saved successfully
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+JSON.READ
+===========================================================-->
+
+<h2
+class="section-title"
+id="json_read">
+
+📦 json.read()
+
+</h2>
+
+<p>
+
+Read a JSON file into a Python dictionary or list.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+config = allkitpy.data.json.read(
+    "config.json"
+)
+
+print(config)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>{
+    "theme":"dark",
+    "language":"en"
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+JSON.WRITE
+===========================================================-->
+
+<h2
+class="section-title"
+id="json_write">
+
+💾 json.write()
+
+</h2>
+
+<p>
+
+Write a dictionary or list to a JSON file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+settings = {
+
+    "theme":"dark",
+
+    "language":"en"
+
+}
+
+allkitpy.data.json.write(
+
+    settings,
+
+    "settings.json"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+settings.json
+saved successfully
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 3
+
+xml.read()
+
+xml.write()
+
+yaml.read()
+
+yaml.write()
+
+===========================================================-->
+<!--==========================================================
+XML.READ
+===========================================================-->
+
+<h2
+class="section-title"
+id="xml_read">
+
+🧩 xml.read()
+
+</h2>
+
+<p>
+
+Read and parse an XML document.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+tree = allkitpy.data.xml.read(
+    "books.xml"
+)
+
+root = tree.getroot()
+
+print(root.tag)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>books</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+XML.WRITE
+===========================================================-->
+
+<h2
+class="section-title"
+id="xml_write">
+
+💾 xml.write()
+
+</h2>
+
+<p>
+
+Save an XML tree to a file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+tree = allkitpy.data.xml.read(
+    "books.xml"
+)
+
+allkitpy.data.xml.write(
+    tree,
+    "output.xml"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+output.xml
+saved successfully
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+YAML.READ
+===========================================================-->
+
+<h2
+class="section-title"
+id="yaml_read">
+
+📝 yaml.read()
+
+</h2>
+
+<p>
+
+Read a YAML document into Python objects.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+config = allkitpy.data.yaml.read(
+    "config.yaml"
+)
+
+print(config)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>{
+    "theme":"dark",
+    "language":"en"
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+YAML.WRITE
+===========================================================-->
+
+<h2
+class="section-title"
+id="yaml_write">
+
+💾 yaml.write()
+
+</h2>
+
+<p>
+
+Write a dictionary or list to a YAML document.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+config = {
+
+    "theme":"dark",
+
+    "language":"en"
+
+}
+
+allkitpy.data.yaml.write(
+
+    config,
+
+    "config.yaml"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>
+config.yaml
+saved successfully
+</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 4
+
+size()
+
+exists()
+
+extension()
+
+validate_file()
+
+filename()
+
+stem()
+
+Summary
+
+Footer
+
+===========================================================-->
+<!--==========================================================
+SIZE
+===========================================================-->
+
+<h2
+class="section-title"
+id="size">
+
+📏 size()
+
+</h2>
+
+<p>
+
+Return the size of a data file in bytes.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+size = allkitpy.data.size(
+    "employees.csv"
+)
+
+print(size)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>2048</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+EXISTS
+===========================================================-->
+
+<h2
+class="section-title"
+id="exists">
+
+✅ exists()
+
+</h2>
+
+<p>
+
+Check whether a data file exists.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+print(
+
+    allkitpy.data.exists(
+        "config.json"
+    )
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>True</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+EXTENSION
+===========================================================-->
+
+<h2
+class="section-title"
+id="extension">
+
+🏷️ extension()
+
+</h2>
+
+<p>
+
+Return the extension of a file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+ext = allkitpy.data.extension(
+    "employees.xlsx"
+)
+
+print(ext)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>.xlsx</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+VALIDATE_FILE
+===========================================================-->
+
+<h2
+class="section-title"
+id="validate_file">
+
+✔️ validate_file()
+
+</h2>
+
+<p>
+
+Verify that a file exists before attempting to
+read or process it.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.data.validate_file(
+    "employees.csv"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>No output
+(File is valid)</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FILENAME
+===========================================================-->
+
+<h2
+class="section-title"
+id="filename">
+
+📄 filename()
+
+</h2>
+
+<p>
+
+Return the filename from a path.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+name = allkitpy.data.filename(
+    "data/employees.csv"
+)
+
+print(name)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>employees.csv</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+STEM
+===========================================================-->
+
+<h2
+class="section-title"
+id="stem">
+
+✂️ stem()
+
+</h2>
+
+<p>
+
+Return the filename without its extension.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code</h4>
+
+<pre><code>import allkitpy
+
+name = allkitpy.data.stem(
+    "employees.csv"
+)
+
+print(name)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output</h4>
+
+<pre><code>employees</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MODULE SUMMARY
+===========================================================-->
+
+<h2 class="section-title">
+
+📘 Module Summary
+
+</h2>
+
+<p>
+
+The <strong>Data</strong> module provides a unified interface
+for working with common structured data formats. It allows
+you to read, write, and manage CSV, Excel, JSON, XML, and
+YAML files while also providing helpful file utilities such
+as checking existence, retrieving file sizes, determining
+extensions, validating files, and extracting filenames.
+
+</p>
+
+<div class="info-box">
+
+<b>Supported Formats</b>
+
+<ul>
+
+<li>📄 CSV</li>
+
+<li>📗 Excel (.xlsx)</li>
+
+<li>📦 JSON</li>
+
+<li>🧩 XML</li>
+
+<li>📝 YAML</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+<footer class="footer">
+
+<p>
+
+<strong>AllkitPy Data Module Documentation</strong>
+
+</p>
+
+<p>
+
+Read, write, and manage structured data files using a
+simple and consistent API designed for CSV, Excel, JSON,
+XML, and YAML formats.
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

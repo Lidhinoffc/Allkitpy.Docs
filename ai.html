@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Module | AllkitPy</title>
+
+<link
+rel="stylesheet"
+href="modules.css">
+<link
+rel="stylesheet"
+href="image.css">
+
+
+</head>
+
+
+<body>
+
+
+<!--==========================================================
+HEADER
+===========================================================-->
+
+
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!--==========================================================
+LAYOUT
+===========================================================-->
+
+<div class="container">
+
+<!--==========================================================
+SIDEBAR
+===========================================================-->
+
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a class="active" href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+
+
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+
+<main class="content">
+
+
+
+<h1>
+
+🤖 AI Module
+
+</h1>
+
+
+<p>
+
+The <strong>AI</strong> module provides a unified interface
+for working with Artificial Intelligence providers.
+
+It supports chat completion, embeddings, image generation,
+vision analysis, speech generation, moderation, and
+streaming responses.
+
+</p>
+
+
+
+<div class="info-box">
+
+
+<b>
+
+Features
+
+</b>
+
+
+<ul>
+
+
+<li>
+
+⚙️ AI Provider Configuration
+
+</li>
+
+
+<li>
+
+💬 Chat Completion
+
+</li>
+
+
+<li>
+
+🧠 Text Embeddings
+
+</li>
+
+
+<li>
+
+👁️ Vision Analysis
+
+</li>
+
+
+<li>
+
+🎨 Image Generation
+
+</li>
+
+
+<li>
+
+🔊 Speech Generation
+
+</li>
+
+
+<li>
+
+🛡️ Content Moderation
+
+</li>
+
+
+<li>
+
+🌊 Streaming Responses
+
+</li>
+
+
+<li>
+
+🔌 Provider Registry
+
+</li>
+
+
+<li>
+
+🔑 API Configuration
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+
+<p>
+
+Configure an AI provider and send a chat request.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+import allkitpy
+
+
+allkitpy.ai.configure(
+
+    provider="openai",
+
+    api_key="YOUR_API_KEY"
+
+)
+
+
+response = allkitpy.ai.chat(
+
+    "Explain Python"
+
+)
+
+
+print(response)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Python is a high-level
+programming language...
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+FUNCTIONS
+===========================================================-->
+
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+
+
+<div class="function-nav">
+
+
+<a href="#configure">
+
+configure()
+
+</a>
+
+
+<a href="#chat">
+
+chat()
+
+</a>
+
+
+<a href="#embedding">
+
+embedding()
+
+</a>
+
+
+<a href="#vision">
+
+vision()
+
+</a>
+
+
+<a href="#image">
+
+image()
+
+</a>
+
+
+<a href="#speech">
+
+speech()
+
+</a>
+
+
+<a href="#moderation">
+
+moderation()
+
+</a>
+
+
+<a href="#stream">
+
+stream()
+
+</a>
+
+
+<a href="#providers">
+
+providers
+
+</a>
+
+
+<a href="#exceptions">
+
+exceptions
+
+</a>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+CONFIGURE
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="configure">
+
+⚙️ configure()
+
+</h2>
+
+
+
+<p>
+
+Configure the global AI provider settings.
+
+</p>
+
+
+
+
+<div class="function-card">
+
+
+
+<div class="example-grid">
+
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+allkitpy.ai.configure(
+
+    provider="openai",
+
+    api_key="YOUR_API_KEY",
+
+    model="gpt-4"
+
+)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Provider configured
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+CHAT
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="chat">
+
+💬 chat()
+
+</h2>
+
+
+
+<p>
+
+Generate a response from an AI provider.
+
+</p>
+
+
+
+
+<div class="function-card">
+
+
+
+<div class="example-grid">
+
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+answer = allkitpy.ai.chat(
+
+    "What is AI?"
+
+)
+
+
+print(answer)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+AI is the simulation
+of human intelligence
+by machines.
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+<!-- PART 2 STARTS HERE -->
+ <!--==========================================================
+EMBEDDING
+===========================================================-->
+
+
+<h2
+class="section-title"
+id="embedding">
+
+🧠 embedding()
+
+</h2>
+
+
+<p>
+
+Generate numerical vector representations
+of text using an AI embedding model.
+
+</p>
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+import allkitpy
+
+
+vector = allkitpy.ai.embedding(
+
+    "Artificial intelligence"
+
+)
+
+
+print(vector)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+[
+0.023,
+0.154,
+0.762,
+...
+]
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+EMBEDDING WITH MODEL
+===========================================================-->
+
+
+<h3>
+
+Using a specific embedding model
+
+</h3>
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+result = allkitpy.ai.embedding(
+
+    "Machine learning",
+
+    model="embedding-model"
+
+)
+
+
+print(result)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Embedding vector
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+VISION
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="vision">
+
+👁️ vision()
+
+</h2>
+
+
+
+<p>
+
+Analyze images using an AI vision model.
+
+The function accepts an image and optional
+instructions.
+
+</p>
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+import allkitpy
+
+
+result = allkitpy.ai.vision(
+
+    "photo.png",
+
+    "Describe this image"
+
+)
+
+
+print(result)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+The image contains
+a mountain landscape.
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+VISION QUESTIONS
+===========================================================-->
+
+
+<h3>
+
+Ask questions about images
+
+</h3>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+answer = allkitpy.ai.vision(
+
+    "car.jpg",
+
+    "What color is the car?"
+
+)
+
+
+print(answer)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+The car is red.
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+IMAGE
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="image">
+
+🎨 image()
+
+</h2>
+
+
+
+<p>
+
+Generate images from text descriptions.
+
+</p>
+
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+import allkitpy
+
+
+result = allkitpy.ai.image(
+
+    "A futuristic city at night"
+
+)
+
+
+print(result)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Generated image
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+IMAGE OPTIONS
+===========================================================-->
+
+
+
+<h3>
+
+Image generation options
+
+</h3>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+image = allkitpy.ai.image(
+
+    "Robot assistant",
+
+    size="1024x1024",
+
+    quality="high"
+
+)
+
+
+print(image)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Generated image URL
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+SPEECH
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="speech">
+
+🔊 speech()
+
+</h2>
+
+
+
+<p>
+
+Convert text into AI-generated speech.
+
+</p>
+
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+import allkitpy
+
+
+audio = allkitpy.ai.speech(
+
+    "Welcome to AllkitPy"
+
+)
+
+
+print(audio)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Generated audio file
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+SPEECH OPTIONS
+===========================================================-->
+
+
+
+<h3>
+
+Using voice options
+
+</h3>
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+audio = allkitpy.ai.speech(
+
+    "Hello world",
+
+    voice="default",
+
+    format="mp3"
+
+)
+
+
+print(audio)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+hello.mp3
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+<!-- PART 3 STARTS HERE -->
+ <!--==========================================================
+MODERATION
+===========================================================-->
+
+
+<h2
+class="section-title"
+id="moderation">
+
+🛡️ moderation()
+
+</h2>
+
+
+<p>
+
+Analyze text content for safety, policy,
+or moderation requirements using an AI provider.
+
+</p>
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+result = allkitpy.ai.moderation(
+
+    "Hello world"
+
+)
+
+
+print(result)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+{
+ "safe": true
+}
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+MODERATION OPTIONS
+===========================================================-->
+
+
+<h3>
+
+Using moderation settings
+
+</h3>
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+result = allkitpy.ai.moderation(
+
+    "Text to check",
+
+    model="moderation-model"
+
+)
+
+
+print(result)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Moderation result
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+STREAM
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="stream">
+
+🌊 stream()
+
+</h2>
+
+
+
+<p>
+
+Receive AI responses progressively as they
+are generated.
+
+</p>
+
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+response = allkitpy.ai.stream(
+
+    "Write a story"
+
+)
+
+
+for chunk in response:
+
+    print(chunk)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Once
+
+upon
+
+a
+
+time
+
+...
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+PROVIDERS
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="providers">
+
+🔌 Providers
+
+</h2>
+
+
+
+<p>
+
+The AI module supports multiple providers through
+a registry system.
+
+Providers can be registered and loaded dynamically.
+
+</p>
+
+
+
+<div class="info-box">
+
+
+<b>
+
+Provider Features
+
+</b>
+
+
+<ul>
+
+
+<li>
+
+Register custom providers
+
+</li>
+
+
+<li>
+
+Switch providers easily
+
+</li>
+
+
+<li>
+
+Use a common AI interface
+
+</li>
+
+
+<li>
+
+Support multiple AI services
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+REGISTER PROVIDER
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+➕ register()
+
+</h2>
+
+
+
+<p>
+
+Add an AI provider to the registry.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+from allkitpy.ai.registry import register
+
+
+class MyProvider:
+
+    pass
+
+
+
+register(
+
+    "custom",
+
+    MyProvider
+
+)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Provider registered
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+GET PROVIDER
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+🔎 get()
+
+</h2>
+
+
+
+<p>
+
+Retrieve a registered provider class.
+
+</p>
+
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+from allkitpy.ai.registry import get
+
+
+provider = get(
+
+    "custom"
+
+)
+
+
+print(provider)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+&lt;class MyProvider&gt;
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+NAMES
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+📋 names()
+
+</h2>
+
+
+
+<p>
+
+Return all registered provider names.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+from allkitpy.ai.registry import names
+
+
+print(
+
+    names()
+
+)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+[
+"openai",
+"custom"
+]
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+PART 4 STARTS HERE
+EXCEPTIONS
+UTILITIES
+SUMMARY
+FOOTER
+
+===========================================================-->
+<!--==========================================================
+AI CLIENT
+===========================================================-->
+
+
+<h2
+class="section-title">
+
+🤖 AIClient
+
+</h2>
+
+
+
+<p>
+
+The <strong>AIClient</strong> manages the connection
+between AllkitPy and the configured AI provider.
+
+It loads the provider from the registry and creates
+a provider instance automatically.
+
+</p>
+
+
+
+<div class="function-card">
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+from allkitpy.ai.client import AIClient
+
+
+client = AIClient()
+
+
+provider = client.provider()
+
+
+print(provider)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Configured AI Provider
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+EXCEPTIONS
+===========================================================-->
+
+
+
+<h2
+class="section-title"
+id="exceptions">
+
+⚠️ Exceptions
+
+</h2>
+
+
+
+<p>
+
+The AI module provides custom exceptions
+for easier error handling.
+
+</p>
+
+
+
+<div class="info-box">
+
+
+<ul>
+
+
+<li>
+
+<strong>AIError</strong>
+
+<br>
+
+Base AI exception.
+
+</li>
+
+
+<br>
+
+
+<li>
+
+<strong>ProviderNotConfigured</strong>
+
+<br>
+
+Raised when no provider is configured.
+
+</li>
+
+
+<br>
+
+
+<li>
+
+<strong>ProviderNotSupported</strong>
+
+<br>
+
+Raised when a provider is not registered.
+
+</li>
+
+
+<br>
+
+
+<li>
+
+<strong>APIKeyMissing</strong>
+
+<br>
+
+Raised when an API key is required.
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+AIERROR
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+⚠️ AIError
+
+</h2>
+
+
+
+<p>
+
+Base exception class for all AI-related errors.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+from allkitpy.ai.exceptions import AIError
+
+
+try:
+
+    raise AIError(
+        "AI error"
+    )
+
+
+except AIError as error:
+
+    print(error)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+AI error
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+UTILITIES
+===========================================================-->
+
+
+
+<h2
+class="section-title">
+
+🛠️ Utilities
+
+</h2>
+
+
+
+<p>
+
+The AI module includes helper utilities
+for validating inputs and estimating tokens.
+
+</p>
+
+
+
+<div class="info-box">
+
+
+<b>
+
+Available Utilities
+
+</b>
+
+
+<ul>
+
+
+<li>
+
+validate_prompt()
+
+</li>
+
+
+<li>
+
+validate_model()
+
+</li>
+
+
+<li>
+
+token_estimate()
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+
+<!--==========================================================
+VALIDATE PROMPT
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+✅ validate_prompt()
+
+</h2>
+
+
+
+<p>
+
+Check whether a prompt contains valid text.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+from allkitpy.ai import AI
+
+
+AI.validate_prompt(
+
+    "Hello AI"
+
+)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Valid prompt
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+VALIDATE MODEL
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+🧩 validate_model()
+
+</h2>
+
+
+
+<p>
+
+Validate that a model name is provided.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+
+<pre><code>
+from allkitpy.ai import AI
+
+
+AI.validate_model(
+
+    "gpt-model"
+
+)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+Valid model
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+TOKEN ESTIMATE
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+🔢 token_estimate()
+
+</h2>
+
+
+
+<p>
+
+Estimate approximate token usage from text length.
+
+</p>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+from allkitpy.ai import AI
+
+
+tokens = AI.token_estimate(
+
+    "Hello world"
+
+)
+
+
+print(tokens)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+2
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+WORKFLOW
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+🚀 Complete Workflow
+
+</h2>
+
+
+
+<div class="example-grid">
+
+
+<div class="code-box">
+
+
+<h4>
+
+💻 Code
+
+</h4>
+
+
+<pre><code>
+import allkitpy
+
+
+allkitpy.ai.configure(
+
+    provider="openai",
+
+    api_key="KEY"
+
+)
+
+
+
+response = allkitpy.ai.chat(
+
+    "Create a Python example"
+
+)
+
+
+
+print(response)
+
+</code></pre>
+
+
+</div>
+
+
+
+<div class="output-box">
+
+
+<h4>
+
+📤 Output
+
+</h4>
+
+
+<pre><code>
+
+AI generated response
+
+</code></pre>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+SUMMARY
+===========================================================-->
+
+
+
+<h2 class="section-title">
+
+📘 AI Module Summary
+
+</h2>
+
+
+
+<p>
+
+The <strong>AllkitPy AI module</strong> provides a
+simple and unified interface for modern AI workflows.
+
+It supports conversations, embeddings, vision,
+image generation, speech, moderation, streaming,
+and custom provider integration.
+
+</p>
+
+
+
+<div class="info-box">
+
+
+<b>
+
+Supported Features
+
+</b>
+
+
+<ul>
+
+
+<li>
+
+💬 Chat
+
+</li>
+
+
+<li>
+
+🧠 Embeddings
+
+</li>
+
+
+<li>
+
+👁️ Vision
+
+</li>
+
+
+<li>
+
+🎨 Image Generation
+
+</li>
+
+
+<li>
+
+🔊 Speech
+
+</li>
+
+
+<li>
+
+🛡️ Moderation
+
+</li>
+
+
+<li>
+
+🌊 Streaming
+
+</li>
+
+
+<li>
+
+🔌 Custom Providers
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+
+<hr class="divider">
+
+
+
+
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+
+
+<footer class="footer">
+
+
+<p>
+
+<strong>
+
+AllkitPy AI Module Documentation
+
+</strong>
+
+</p>
+
+
+
+<p>
+
+Build AI-powered applications with a clean,
+provider-independent Python interface.
+
+</p>
+
+
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+
+
+</footer>
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Web Module | AllkitPy</title>
+
+<link
+rel="stylesheet"
+href="modules.css">
+<link rel="stylesheet"
+href="image.css">
+
+</head>
+
+<body>
+
+<!--==========================================================
+HEADER
+===========================================================-->
+
+<header class="topbar">
+        <div class="logo">
+            <a class="brand" href="#">
+            <img src="images/icon.png" alt="Allpykit">
+            <span>Allpykit</span>
+            </a>
+              <!-- Allkit<span>Py</span> -->
+            <small>v0.1.0</small>Documentation
+        </div>
+        <div class="search">
+            <input type="search" placeholder="🔍 Search...(coming soon)">
+        </div>
+    </header>
+
+<!--==========================================================
+LAYOUT
+===========================================================-->
+
+<div class="container">
+
+<!--==========================================================
+SIDEBAR
+===========================================================-->
+
+<aside class="sidebar">
+
+    <h2>&nbsp;📚 Modules</h2>
+
+
+    <nav>
+        <a href="index.html" style="font-size: 20px;"><b>🏠 Home</b></a>
+
+        <a href="examples.html">📄 Introduction</a>
+        <a href="text.html">📝 Text</a>
+        <a href="math.html">➗ Math</a>
+        <a href="image.html">🖼 Image</a>
+        <a href="pdf.html">📕 PDF</a>
+        <a href="audio.html">🎵 Audio</a>
+        <a href="video.html">🎬 Video</a>
+        <a class="active" href="web.html">🌐 Web</a>
+        <a href="data.html">📊 Data</a>
+        <a href="file.html">📁 File</a>
+        <a href="system.html">💻 System</a>
+        <a href="ai.html">🤖 AI</a>
+    </nav>
+
+</aside>
+<!--==========================================================
+CONTENT
+===========================================================-->
+
+<main class="content">
+
+<h1>
+
+🌐 Web Module
+
+</h1>
+
+<p>
+
+The <strong>Web</strong> module provides simple tools
+for interacting with websites and web services.
+You can send HTTP requests, download files,
+parse HTML documents, extract links,
+work with JSON files,
+handle URLs,
+and create reusable HTTP sessions.
+
+</p>
+
+<div class="info-box">
+
+<b>
+
+Features
+
+</b>
+
+<ul>
+
+<li>HTTP GET Requests</li>
+
+<li>HTTP POST Requests</li>
+
+<li>Download Files</li>
+
+<li>Parse HTML</li>
+
+<li>Extract Page Titles</li>
+
+<li>Extract Hyperlinks</li>
+
+<li>Load JSON</li>
+
+<li>Save JSON</li>
+
+<li>Parse URLs</li>
+
+<li>Join URLs</li>
+
+<li>Create HTTP Sessions</li>
+
+<li>Validate URLs</li>
+
+<li>Response Text</li>
+
+<li>Response JSON</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+QUICK EXAMPLE
+===========================================================-->
+
+<h2 class="section-title">
+
+🚀 Quick Example
+
+</h2>
+
+<p>
+
+Fetch a web page using a GET request.
+
+</p>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.get(
+    "https://example.com"
+)
+
+print(
+    response.status_code
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>200</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FUNCTIONS
+===========================================================-->
+
+<h2 class="section-title">
+
+📚 Functions
+
+</h2>
+
+<div class="function-nav">
+
+<a href="#get">
+
+get()
+
+</a>
+
+<a href="#post">
+
+post()
+
+</a>
+
+<a href="#download">
+
+download()
+
+</a>
+
+<a href="#html">
+
+html()
+
+</a>
+
+<a href="#title">
+
+title()
+
+</a>
+
+<a href="#links">
+
+links()
+
+</a>
+
+<a href="#load">
+
+load()
+
+</a>
+
+<a href="#save">
+
+save()
+
+</a>
+
+<a href="#parse">
+
+parse()
+
+</a>
+
+<a href="#join">
+
+join()
+
+</a>
+
+<a href="#create">
+
+create()
+
+</a>
+
+<a href="#validate_url">
+
+validate_url()
+
+</a>
+
+<a href="#response_text">
+
+response_text()
+
+</a>
+
+<a href="#response_json">
+
+response_json()
+
+</a>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+GET
+===========================================================-->
+
+<h2
+class="section-title"
+id="get">
+
+📥 get()
+
+</h2>
+
+<p>
+
+Send an HTTP GET request.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.get(
+    "https://httpbin.org/get"
+)
+
+print(
+    response.status_code
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>200</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+POST
+===========================================================-->
+
+<h2
+class="section-title"
+id="post">
+
+📤 post()
+
+</h2>
+
+<p>
+
+Send an HTTP POST request.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.post(
+    "https://httpbin.org/post",
+    json={
+        "name":"Alice"
+    }
+)
+
+print(
+    response.status_code
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>200</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+DOWNLOAD
+===========================================================-->
+
+<h2
+class="section-title"
+id="download">
+
+⬇️ download()
+
+</h2>
+
+<p>
+
+Download a file from a URL.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.web.download(
+    "https://example.com/logo.png",
+    "logo.png"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>logo.png</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+HTML
+===========================================================-->
+
+<h2
+class="section-title"
+id="html">
+
+📄 html()
+
+</h2>
+
+<p>
+
+Parse an HTML document using BeautifulSoup.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+html = "&lt;h1&gt;Hello&lt;/h1&gt;"
+
+soup = allkitpy.web.html(
+    html
+)
+
+print(
+    soup.h1.text
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>Hello</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+TITLE
+===========================================================-->
+
+<h2
+class="section-title"
+id="title">
+
+🏷️ title()
+
+</h2>
+
+<p>
+
+Extract the page title from HTML.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+html = """
+<html>
+<head>
+<title>
+My Site
+</title>
+</head>
+</html>
+"""
+
+print(
+    allkitpy.web.title(
+        html
+    )
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>My Site</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 2 STARTS HERE
+
+links()
+
+load()
+
+save()
+
+parse()
+
+join()
+
+create()
+
+validate_url()
+
+response_text()
+
+response_json()
+
+===========================================================-->
+<!--==========================================================
+LINKS
+===========================================================-->
+
+<h2
+class="section-title"
+id="links">
+
+🔗 links()
+
+</h2>
+
+<p>
+
+Extract every hyperlink from an HTML document.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+html = """
+<a href="home.html">
+Home
+</a>
+
+<a href="about.html">
+About
+</a>
+"""
+
+print(
+    allkitpy.web.links(
+        html
+    )
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>[
+'home.html',
+'about.html'
+]</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+LOAD
+===========================================================-->
+
+<h2
+class="section-title"
+id="load">
+
+📂 load()
+
+</h2>
+
+<p>
+
+Load a JSON file into a Python object.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+data = allkitpy.web.load(
+    "config.json"
+)
+
+print(data)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>{
+    "theme":"dark",
+    "font":18
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+SAVE
+===========================================================-->
+
+<h2
+class="section-title"
+id="save">
+
+💾 save()
+
+</h2>
+
+<p>
+
+Save a Python dictionary or list as a JSON file.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+settings = {
+
+    "theme":"dark",
+
+    "language":"en"
+
+}
+
+allkitpy.web.save(
+    settings,
+    "settings.json"
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>settings.json</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PARSE
+===========================================================-->
+
+<h2
+class="section-title"
+id="parse">
+
+🌐 parse()
+
+</h2>
+
+<p>
+
+Parse a URL into its individual components.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+url = allkitpy.web.parse(
+
+    "https://example.com/docs/index.html"
+
+)
+
+print(url.scheme)
+
+print(url.netloc)
+
+print(url.path)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>https
+
+example.com
+
+/docs/index.html</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+JOIN
+===========================================================-->
+
+<h2
+class="section-title"
+id="join">
+
+🔗 join()
+
+</h2>
+
+<p>
+
+Combine a base URL with another path.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+url = allkitpy.web.join(
+
+    "https://example.com/",
+
+    "about"
+
+)
+
+print(url)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>https://example.com/about</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+CREATE
+===========================================================-->
+
+<h2
+class="section-title"
+id="create">
+
+🌍 create()
+
+</h2>
+
+<p>
+
+Create a reusable HTTP session.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+session = allkitpy.web.create()
+
+response = session.get(
+
+    "https://httpbin.org/get"
+
+)
+
+print(
+    response.status_code
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>200</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+VALIDATE_URL
+===========================================================-->
+
+<h2
+class="section-title"
+id="validate_url">
+
+✅ validate_url()
+
+</h2>
+
+<p>
+
+Validate whether a URL is correctly formed.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+allkitpy.web.validate_url(
+
+    "https://example.com"
+
+)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>Valid URL</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+PART 3 STARTS HERE
+
+response_text()
+
+response_json()
+
+Summary
+
+Footer
+
+===========================================================-->
+<!--==========================================================
+RESPONSE_TEXT
+===========================================================-->
+
+<h2
+class="section-title"
+id="response_text">
+
+📄 response_text()
+
+</h2>
+
+<p>
+
+Return the text content of an HTTP response.
+
+This is useful for reading HTML pages, plain text,
+or other text-based web responses.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.get(
+
+    "https://example.com"
+
+)
+
+text = allkitpy.web.response_text(
+    response
+)
+
+print(text[:120])</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;
+Example Domain
+&lt;/title&gt;
+...</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+RESPONSE_JSON
+===========================================================-->
+
+<h2
+class="section-title"
+id="response_json">
+
+📦 response_json()
+
+</h2>
+
+<p>
+
+Convert an HTTP response into a Python dictionary
+or list by parsing its JSON content.
+
+</p>
+
+<div class="function-card">
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Code
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.get(
+
+    "https://httpbin.org/json"
+
+)
+
+data = allkitpy.web.response_json(
+    response
+)
+
+print(data)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>{
+    "slideshow": {
+        ...
+    }
+}</code></pre>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+MODULE SUMMARY
+===========================================================-->
+
+<h2
+class="section-title">
+
+📘 Module Summary
+
+</h2>
+
+<p>
+
+The <strong>Web</strong> module simplifies common
+internet-related tasks into an easy-to-use API.
+Whether you're sending HTTP requests, downloading
+files, parsing HTML documents, handling JSON,
+or manipulating URLs, the module provides a clean
+and beginner-friendly interface while still being
+powerful enough for automation projects.
+
+</p>
+
+<div class="info-box">
+
+<b>
+
+Included Categories
+
+</b>
+
+<ul>
+
+<li>🌍 HTTP Requests</li>
+
+<li>⬇️ File Downloads</li>
+
+<li>📄 HTML Parsing</li>
+
+<li>🔗 Link Extraction</li>
+
+<li>📦 JSON Utilities</li>
+
+<li>🌐 URL Utilities</li>
+
+<li>🤝 HTTP Sessions</li>
+
+<li>✅ URL Validation</li>
+
+<li>📝 Response Helpers</li>
+
+</ul>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+COMMON WORKFLOW
+===========================================================-->
+
+<h2
+class="section-title">
+
+🚀 Typical Workflow
+
+</h2>
+
+<div class="example-grid">
+
+<div class="code-box">
+
+<h4>
+
+💻 Example
+
+</h4>
+
+<pre><code>import allkitpy
+
+response = allkitpy.web.get(
+
+    "https://example.com"
+
+)
+
+html = allkitpy.web.response_text(
+    response
+)
+
+title = allkitpy.web.title(
+    html
+)
+
+links = allkitpy.web.links(
+    html
+)
+
+print(title)
+
+print(links)</code></pre>
+
+</div>
+
+<div class="output-box">
+
+<h4>
+
+📤 Output
+
+</h4>
+
+<pre><code>Example Domain
+
+[
+    "https://www.iana.org/..."
+]</code></pre>
+
+</div>
+
+</div>
+
+<hr class="divider">
+
+<!--==========================================================
+FOOTER
+===========================================================-->
+
+<footer class="footer">
+
+<p>
+
+<strong>
+
+AllkitPy Web Module Documentation
+
+</strong>
+
+</p>
+
+<p>
+
+Build web applications, communicate with REST APIs,
+download files, parse HTML documents, work with JSON,
+manage URLs, and automate web-related tasks using a
+simple and consistent interface.
+
+</p>
+
+<p>
+
+© 2026 AllkitPy Documentation
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+</html>
